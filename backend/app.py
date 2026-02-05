@@ -21,7 +21,7 @@ class Config:
     # ⚠️ PERUBAHAN PENTING UNTUK VERCEL:
     # Gunakan os.getenv agar kunci dibaca dari Setting Vercel, bukan hardcoded.
     # Parameter kedua adalah fallback untuk local testing.
-    GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY", "api-key-anda-di-sini") 
+    GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY") 
     
     # Model AI
     MODEL_NAME = "gemini-flash-latest"
