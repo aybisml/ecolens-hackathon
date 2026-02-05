@@ -153,7 +153,7 @@ export default function UserApp({ onBack }) {
     formData.append("lon", geo.lon);
 
     axios
-      .post("http://127.0.0.1:5000/api/analyze", formData)
+      .post("/api/analyze", formData)
       .then((res) => {
         setResult(res.data);
         speak(`${res.data.object_name}. ${res.data.prediction_logic}`);

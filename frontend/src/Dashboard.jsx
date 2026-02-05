@@ -185,7 +185,7 @@ export default function Dashboard({ onBack }) {
   useEffect(() => {
     const fetch = () =>
       axios
-        .get("http://127.0.0.1:5000/api/reports")
+        .get("/api/reports")
         .then((r) => setReports(r.data))
         .catch(console.error);
     fetch();
@@ -196,12 +196,11 @@ export default function Dashboard({ onBack }) {
   // ACTIONS
   const resolve = (e, id) => {
     e.stopPropagation();
-    axios.post(`http://127.0.0.1:5000/api/reports/${id}/resolve`).catch(alert);
+    axios.post(`/api/reports/${id}/resolve`).catch(alert);
   };
   const del = (e, id) => {
     e.stopPropagation();
-    if (confirm(t("delete_report") + "?"))
-      axios.delete(`http://127.0.0.1:5000/api/reports/${id}`);
+    if (confirm(t("delete_report") + "?")) axios.delete(`/api/reports/${id}`);
   };
   const clickCard = (r) => {
     setSelected(r.id);
